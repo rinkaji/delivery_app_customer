@@ -19,7 +19,7 @@ class PabiliDelivery extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         fontFamily: 'Plus Jakarta Sans',
-        scaffoldBackgroundColor: const Color(0xFFF9F9FF),
+        scaffoldBackgroundColor: Color(0xFFF9F9FF),
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFF5A623)),
       ),
       home: ServicesPage(),

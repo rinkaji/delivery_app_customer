@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pabili_customer/constants/app_text_sizes.dart';
 import 'package:pabili_customer/constants/constant_colors.dart';
 import 'package:pabili_customer/views/home/widgets/payment_method.dart';
 import 'package:pabili_customer/views/home/widgets/rider_details_card.dart';
+import 'package:pabili_customer/views/services/ride_page.dart';
 
 class ServicesPage extends StatelessWidget {
   const ServicesPage({super.key});
@@ -242,48 +244,53 @@ class ServicesPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Container(
-                      padding: EdgeInsets.all(14),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadiusGeometry.circular(12),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            spacing: 12,
-                            children: [
-                              Container(
-                                width: 44,
-                                height: 44,
-                                decoration: BoxDecoration(
-                                  color: tertiaryVariant2,
-                                  borderRadius: BorderRadius.circular(8),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => RidePage());
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(14),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadiusGeometry.circular(12),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              spacing: 12,
+                              children: [
+                                Container(
+                                  width: 44,
+                                  height: 44,
+                                  decoration: BoxDecoration(
+                                    color: tertiaryVariant2,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Icon(
+                                    Icons.motorcycle_outlined,
+                                    color: primary,
+                                  ),
                                 ),
-                                child: Icon(
-                                  Icons.motorcycle_outlined,
-                                  color: primary,
+                                Text(
+                                  "Ride / Hatid",
+                                  style: GoogleFonts.plusJakartaSans(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 18,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                "Ride / Hatid",
-                                style: GoogleFonts.plusJakartaSans(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Text(
-                            "Book Ride",
-                            style: GoogleFonts.jetBrainsMono(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 10,
-                              color: primary,
+                              ],
                             ),
-                          ),
-                        ],
+                            Text(
+                              "Book Ride",
+                              style: GoogleFonts.jetBrainsMono(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 10,
+                                color: primary,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Container(
